@@ -7,7 +7,7 @@
 
 This repository contains the code of ViT-WSI from
 
-Li,Zhongxiao, et al. "Vision Transformer-based Weakly-Supervised Histopathological Image Analysis of Primary Brain Tumors"
+Li,Zhongxiao, et al. "Vision Transformer-based Weakly-Supervised Histopathological Image Analysis of Primary Brain Tumors".
 
 ## Prerequisites
 
@@ -58,7 +58,7 @@ Build graph that will be automatically saved to pickle files:
 ```
 bash meta-main.sh build_slide_graph
 ```
-The results will be saved to `dataset_files/TCGA-glioma-subtyping/slide_graph`
+The results will be saved to `dataset_files/TCGA-glioma-subtyping/slide_graph`.
 
 ## Create 10-fold Splits
 ```
@@ -66,15 +66,15 @@ bash meta-main.sh create_splits
 ```
 The dataset will be randomly split into 10 folds. In each fold, #train:#test=8:2.
 
-The results will be saved to `dataset_files/TCGA-glioma-subtyping/splits`
+The results will be saved to `dataset_files/TCGA-glioma-subtyping/splits`.
 
 ## Training and Evaluation
-To run the ViT-WSI aggregater training without slide graph, use `TCGA-glioma-subtyping-vit_aggr` as the experimental code. This uses `config_files/TCGA-glioma-subtyping-vit_aggr.yaml` as the configuration file
+To run the ViT-WSI aggregater training without slide graph, use `TCGA-glioma-subtyping-vit_aggr` as the experimental code. This uses `config_files/TCGA-glioma-subtyping-vit_aggr.yaml` as the configuration file.
 ```
 bash meta-main.sh train_eval TCGA-glioma-subtyping-vit_aggr
 ```
 
-To run the ViT-WSI aggregater training with slide graph, use `TCGA-glioma-subtyping-graph_vit_aggr` as the experimental code. This will use `config_files/TCGA-glioma-subtyping-graph_vit_aggr.yaml` as the configuration file
+To run the ViT-WSI aggregater training with slide graph, use `TCGA-glioma-subtyping-graph_vit_aggr` as the experimental code. This will use `config_files/TCGA-glioma-subtyping-graph_vit_aggr.yaml` as the configuration file.
 
 ```
 bash meta-main.sh train_eval TCGA-glioma-subtyping-graph_vit_aggr
