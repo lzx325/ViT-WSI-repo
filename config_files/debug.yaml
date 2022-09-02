@@ -1,0 +1,34 @@
+exp_code: "debug"
+
+# data configurations
+data_files_dir: "dataset_files/HMU_1st"
+# features_dir: "features/features--vit_large_patch16_384--2048_384"
+features_dir: "slide_graph/feature_nn_4-coord_nn_4"
+label_dict: { AA : 0, AO : 1, DA : 2, GBM : 3, O : 4}
+task: task_2_tumor_subtyping
+info_csv_path: "info/glioma/glioma_subtype_5classes.csv"
+split_dir: "splits/glioma_subtype_5classes"
+label_frac: 1
+test_same_as_val: true
+ext: svs
+k: 10
+
+# train configurations
+max_epochs: 20
+visualize_examples: false
+lr: 2.0e-4
+bag_loss: ce
+inst_loss: svm
+log_data: true
+weighted_sample: true
+subtyping: true
+early_stopping: true
+train_root_dir: "dataset_files/HMU_1st/train"
+
+# model configurations
+model_type: graph_vit_aggr
+# eval configurations
+associated_train_dir: null
+eval_dir: null
+eval_split: test
+model_ckpt_fp: "dataset_files/HMU_1st/train/debug/fold-1/2021-09-20-02:17:41/ckpt/best_model.pt"

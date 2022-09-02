@@ -1,0 +1,6 @@
+.ipynb_checkpoints/
+**/__pycache__
+slide_graph_builder/*.c
+slide_graph_builder/*.so
+dcgm/
+slurm/

@@ -1,0 +1,44 @@
+exp_code: "TCGA-glioma-subtyping-vit_aggr"
+
+# data configurations
+data_files_dir: "dataset_files/TCGA-glioma-subtyping"
+# features_dir: "features/features--vit_large_patch16_384--2048_384"
+patches_dir: "patches/patches--patch_size_1024"
+features_dir: "features/features--vit_large_patch16_384--patch_size_1024_384"
+label_dict: { A : 0, GBM : 1, O : 2 }
+task: task_2_tumor_subtyping
+info_csv_path: "info/selected_slides-info.csv"
+split_dir: "splits/default_splits"
+
+label_frac: 1
+test_same_as_val: true
+ext: svs
+k: 10
+
+# train configurations
+max_epochs: 50
+visualize_examples: false
+lr: 1.0e-4
+bag_loss: ce
+inst_loss: svm
+log_data: true
+weighted_sample: true
+subtyping: true
+early_stopping: true
+train_root_dir: "dataset_files/TCGA-glioma-subtyping/train"
+
+# model configurations
+model_type: vit_aggr
+heads : 8
+dim_head : 32
+mlp_dim : 128
+dim: 1024
+aggr: gap
+depth: 1
+
+# eval configurations
+associated_train_dir: null
+eval_dir: null
+eval_split: test
+model_ckpt_fp: null
+associated_train_root_dir: "dataset_files/TCGA-glioma-subtyping/train"

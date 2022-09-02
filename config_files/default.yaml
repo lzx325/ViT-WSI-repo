@@ -1,0 +1,20 @@
+# train configurations
+lr: 1.0e-4
+reg: 1.0e-5
+seed: 1
+early_stopping: true
+log_data: false
+opt: adam
+drop_out: false
+bag_loss: ce
+weighted_sample: false
+no_inst_cluster: false
+inst_loss: null
+subtyping: false
+bag_weight: 0.7
+B: 8
+k: 10
+model_size: null
+eval_dir: null
+train_data_threshold: null
+eval_data_threshold: null
